@@ -52,7 +52,8 @@ public final class Main extends javax.swing.JFrame {
         boolean custom_pass_will_enter_loop = false;
         boolean select_car_type = false;
         boolean select_car_trans = false;
-        boolean bd_control = false;
+        boolean select_E_bd = false;
+        boolean select_gender_E = false;
         
 
 
@@ -902,6 +903,11 @@ public final class Main extends javax.swing.JFrame {
         field_E_gender.setEditable(false);
         field_E_gender.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         field_E_gender.setText(" ");
+        field_E_gender.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                field_E_genderMouseClicked(evt);
+            }
+        });
 
         field_E_bd_m.setEditable(false);
         field_E_bd_m.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -909,6 +915,11 @@ public final class Main extends javax.swing.JFrame {
         field_E_bd_m.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 field_E_bd_mMouseClicked(evt);
+            }
+        });
+        field_E_bd_m.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                field_E_bd_mActionPerformed(evt);
             }
         });
 
@@ -1097,7 +1108,7 @@ public final class Main extends javax.swing.JFrame {
                             .addComponent(field_E_mobile, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(field_E_sss, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         employee_panelLayout.setVerticalGroup(
@@ -1301,7 +1312,7 @@ public final class Main extends javax.swing.JFrame {
                         .addGap(56, 56, 56)
                         .addComponent(field_C_add, javax.swing.GroupLayout.PREFERRED_SIZE, 342, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(19, 19, 19))
         );
         jPanel2Layout.setVerticalGroup(
@@ -1348,7 +1359,7 @@ public final class Main extends javax.swing.JFrame {
         month_label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         month_label.setText("XXXXX");
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Ken\\Documents\\NetBeansProjects\\JavaApplication1\\images\\head.jpg")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Ken\\Documents\\NetBeansProjects\\asymptotic_approach_Bago\\images\\head.jpg")); // NOI18N
 
         jMenu1.setText("File");
 
@@ -1552,11 +1563,14 @@ public final class Main extends javax.swing.JFrame {
             
             select_car_trans = true;
             select_car_type = true;
+            select_gender_E = true;
             
             
             
             
             addbtn_E = true;
+            
+            select_E_bd = true;
             
             }
             
@@ -1782,6 +1796,10 @@ public final class Main extends javax.swing.JFrame {
         }
         }
         
+         
+            select_car_trans = false;
+            select_car_type = false;
+        
 
     }//GEN-LAST:event_btn_saveActionPerformed
 
@@ -1797,10 +1815,15 @@ public final class Main extends javax.swing.JFrame {
             field_model.setEditable(false);
             field_brand.setEditable(false);
             field_type.setEditable(false);
+            field_trans.setEditable(false);
             field_des.setEditable(false);
             
             btn_save.setEnabled(false);
             btn_cancel.setEnabled(false);
+            
+             
+            select_car_trans = false;
+            select_car_type = false;
         
        }
        catch(SQLException err){
@@ -1946,6 +1969,9 @@ public final class Main extends javax.swing.JFrame {
             
             btn_E_ok.setEnabled(true);
             btn_E_cancel.setEnabled(true);  
+            
+            select_E_bd = true;
+            select_gender_E = true;
             
             
             
@@ -2110,6 +2136,8 @@ public final class Main extends javax.swing.JFrame {
              
             addbtn_E = false; 
             
+            
+            
             field_E_ID.setEditable(false);
             field_E_f_name.setEditable(false);
             field_E_m_name.setEditable(false);
@@ -2171,6 +2199,8 @@ public final class Main extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null, err.getMessage());  
         }
         }
+            select_E_bd = false;
+            select_gender_E = false;
             
             
             
@@ -2197,6 +2227,9 @@ public final class Main extends javax.swing.JFrame {
             field_E_sss.setEditable(false);
             field_E_position.setEditable(false);
             field_E_dept.setEditable(false);
+            
+            select_E_bd = false;
+            select_gender_E = false;
         
        }
        catch(SQLException err){
@@ -2276,12 +2309,13 @@ public final class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_inventory_panelComponentHidden
 
     private void field_E_bd_mMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_field_E_bd_mMouseClicked
-        Months m = new Months(this, true);
+       
         
-        if(bd_control){
+        if(select_E_bd){
+        Months m = new Months(this, true);
         String months = m.m;
-        String day = Integer.toString(m.d);
-        String year = Integer.toString(m.y);
+        String day = m.days;
+        String year = m.years;
         
         field_E_bd_m.setText(months);
         field_E_bd_d.setText(day);
@@ -2294,9 +2328,10 @@ public final class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_field_E_bd_mMouseClicked
 
     private void field_E_bd_dMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_field_E_bd_dMouseClicked
-          Months m = new Months(this, true);
+         
         
-        if(bd_control){
+        if(select_E_bd){
+             Months m = new Months(this, true);
         String months = m.m;
         String day = Integer.toString(m.d);
         String year = Integer.toString(m.y);
@@ -2308,9 +2343,10 @@ public final class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_field_E_bd_dMouseClicked
 
     private void field_E_bd_yMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_field_E_bd_yMouseClicked
-         Months m = new Months(this, true);
         
-        if(bd_control){
+        
+        if(select_E_bd){
+             Months m = new Months(this, true);
         String months = m.m;
         String day = Integer.toString(m.d);
         String year = Integer.toString(m.y);
@@ -2507,6 +2543,20 @@ public final class Main extends javax.swing.JFrame {
     private void jPanel2ComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_jPanel2ComponentShown
        Reload_Table_Client();
     }//GEN-LAST:event_jPanel2ComponentShown
+
+    private void field_E_bd_mActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_field_E_bd_mActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_field_E_bd_mActionPerformed
+
+    private void field_E_genderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_field_E_genderMouseClicked
+       
+       if(select_gender_E){
+       Gender gen = new Gender(this, true);
+       String gens = gen.g;
+       field_E_gender.setText(gens);
+       }
+       
+    }//GEN-LAST:event_field_E_genderMouseClicked
 
     
     

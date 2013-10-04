@@ -16,6 +16,8 @@ public class Months extends javax.swing.JDialog {
      * Creates new form Months
      */
     String m = "January";
+    String days = "01";
+    String years = "2013";
     int d = 1;
     int y = 2013;
     public Months(java.awt.Frame parent, boolean modal) {
@@ -59,7 +61,7 @@ public class Months extends javax.swing.JDialog {
         });
 
         year.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        year.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "2013", "2012", "2011", "2010", "2009", "2008", "2007", "2006", "2005", "2004", "2003", "2002", "2001", "2000", "1999", "1998", "1997", "1996", "1995", "1994", "1993", "1992", "1991", "1990", "1989", "1988", "1987", "1986", "1985", "1984", "1983", "1982", "1981", "1980", "1979", "1978", "1977", "1976", "1975", "1974", "1973", "1972", "1971", "1970", "1969", "1968", "1967", "1966", "1965", "1964", "1963", "1962", "1961", "1960", " ", " ", " " }));
+        year.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "2013", "2012", "2011", "2010", "2009", "2008", "2007", "2006", "2005", "2004", "2003", "2002", "2001", "2000", "1999", "1998", "1997", "1996", "1995", "1994", "1993", "1992", "1991", "1990" }));
         year.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 yearActionPerformed(evt);
@@ -169,7 +171,6 @@ public class Months extends javax.swing.JDialog {
                 switch(s){
                 case "1":
                     d = 1;
-                     JOptionPane.showMessageDialog(null, "1");
                     break;
                 case "2":
                     d = 2;  
@@ -208,7 +209,8 @@ public class Months extends javax.swing.JDialog {
                     d = Integer.parseInt(s);
                     break;
                 case "14":
-                    d = Integer.parseInt(s);  break;
+                    d = Integer.parseInt(s);  
+                    break;
                 case "15":
                   d = Integer.parseInt(s);
                     break;
@@ -262,6 +264,10 @@ public class Months extends javax.swing.JDialog {
                     break;
             
             }
+                days = Integer.toString(d);
+                JOptionPane.showMessageDialog(null, days);
+                
+                
                
     }//GEN-LAST:event_dayActionPerformed
 
@@ -338,32 +344,10 @@ public class Months extends javax.swing.JDialog {
                 case "1990":
                    y = 1990;
                     break;
-                case "1889":
-                    y = 1889;
-                    break;
-                case "1888":
-                   y = 1888;
-                    break;
-                case "1887":
-                   y =1887;
-                    break;
-                case "1886":
-                    y = 1886;
-                    break;
-                case "1885":
-                   y = 1885;
-                    break;
-                case "1884":
-                    y = 1884;
-                    break;
-                case "1883":
-                    y =1883;
-                    break;
-                case "1882":
-                   y = 1882;
-                    break;
             
             }
+                years = Integer.toString(y);
+                JOptionPane.showMessageDialog(null, years);
                 
     }//GEN-LAST:event_yearActionPerformed
 

@@ -933,6 +933,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value=" "/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="field_E_genderMouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="field_E_bd_m">
               <Properties>
@@ -944,6 +947,7 @@
               </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="field_E_bd_mMouseClicked"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="field_E_bd_mActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="field_E_position">
@@ -1463,7 +1467,7 @@
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\Ken\Documents\NetBeansProjects\JavaApplication1\images\head.jpg"/>
+          <Image iconType="2" name="C:\Users\Ken\Documents\NetBeansProjects\asymptotic_approach_Bago\images\head.jpg"/>
         </Property>
       </Properties>
     </Component>
