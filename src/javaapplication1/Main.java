@@ -1359,7 +1359,7 @@ public final class Main extends javax.swing.JFrame {
         month_label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         month_label.setText("XXXXX");
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Ken\\Documents\\NetBeansProjects\\asymptotic_approach_Bago\\images\\head.jpg")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/javaapplication1/head.jpg"))); // NOI18N
 
         jMenu1.setText("File");
 

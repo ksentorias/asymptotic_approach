@@ -98,11 +98,11 @@ public class Login_Authentication extends javax.swing.JFrame {
         getContentPane().add(proceed);
         proceed.setBounds(40, 230, 90, 40);
 
-        pass_icon.setIcon(new javax.swing.ImageIcon("C:\\Users\\Ken\\Desktop\\pa.png")); // NOI18N
+        pass_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/javaapplication1/un.png"))); // NOI18N
         getContentPane().add(pass_icon);
         pass_icon.setBounds(30, 160, 40, 40);
 
-        username_icon.setIcon(new javax.swing.ImageIcon("C:\\Users\\Ken\\Desktop\\un.png")); // NOI18N
+        username_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/javaapplication1/un.png"))); // NOI18N
         getContentPane().add(username_icon);
         username_icon.setBounds(30, 110, 38, 38);
 
@@ -118,7 +118,7 @@ public class Login_Authentication extends javax.swing.JFrame {
         password.setBounds(70, 160, 140, 40);
 
         background.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
-        background.setIcon(new javax.swing.ImageIcon("C:\\Users\\Ken\\Desktop\\b2.jpg")); // NOI18N
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/javaapplication1/b2.jpg"))); // NOI18N
         getContentPane().add(background);
         background.setBounds(0, 0, 550, 320);
 
